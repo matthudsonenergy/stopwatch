@@ -74,19 +74,13 @@ input {
   letter-spacing: 0;
 }
 
-#disp-h {
-  flex: 0 0 4ch;
-  text-align: right;
+.digit {
+  flex: 0 0 1ch;
+  text-align: center;
 }
 
 .sep {
   flex: 0 0 auto;
-}
-
-#disp-m,
-#disp-s {
-  flex: 0 0 2ch;
-  text-align: center;
 }
 
 .resume-form {

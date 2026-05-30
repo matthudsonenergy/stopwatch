@@ -1,9 +1,14 @@
 const STORAGE_KEY = "stopwatch-state-v1";
 const MAX_HOURS = 9999;
 
-const dispH = document.getElementById("disp-h");
-const dispM = document.getElementById("disp-m");
-const dispS = document.getElementById("disp-s");
+const dH3 = document.getElementById("d-h3");
+const dH2 = document.getElementById("d-h2");
+const dH1 = document.getElementById("d-h1");
+const dH0 = document.getElementById("d-h0");
+const dM1 = document.getElementById("d-m1");
+const dM0 = document.getElementById("d-m0");
+const dS1 = document.getElementById("d-s1");
+const dS0 = document.getElementById("d-s0");
 const toggleButton = document.getElementById("toggle-button");
 const resetButton = document.getElementById("reset-button");
 const settingsButton = document.getElementById("settings-button");
@@ -54,9 +59,23 @@ function getElapsedMs() {
 
 function render() {
   const totalSeconds = Math.floor(getElapsedMs() / 1000);
-  dispH.textContent = Math.floor(totalSeconds / 3600);
-  dispM.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-  dispS.textContent = String(totalSeconds % 60).padStart(2, "0");
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = totalSeconds % 60;
+
+  dH3.textContent = Math.floor(h / 1000);
+  dH2.textContent = Math.floor(h / 100) % 10;
+  dH1.textContent = Math.floor(h / 10) % 10;
+  dH0.textContent = h % 10;
+  dH3.style.visibility = h >= 1000 ? "visible" : "hidden";
+  dH2.style.visibility = h >= 100  ? "visible" : "hidden";
+  dH1.style.visibility = h >= 10   ? "visible" : "hidden";
+
+  dM1.textContent = Math.floor(m / 10);
+  dM0.textContent = m % 10;
+  dS1.textContent = Math.floor(s / 10);
+  dS0.textContent = s % 10;
+
   toggleButton.textContent = stopwatchState.isRunning ? "Pause" : "Start";
 }
 
