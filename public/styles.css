@@ -11,8 +11,8 @@
   --muted: #655a49;
   --accent: #1b6b5f;
   --accent-pressed: #144d45;
-  --button-alt-bg: #ece3d2;
-  --button-alt-border: #c9ba9d;
+  --button-alt-bg: #e8e8e8;
+  --button-alt-border: #9a9a9a;
   --error: #9f2f2f;
 }
 
@@ -159,7 +159,7 @@ input {
 }
 
 .secondary-button:active {
-  background: #dfd2bc;
+  background: #d4d4d4;
 }
 
 .secondary-button.confirming {
