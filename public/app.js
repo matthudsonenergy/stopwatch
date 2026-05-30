@@ -1,7 +1,9 @@
 const STORAGE_KEY = "stopwatch-state-v1";
 const MAX_HOURS = 9999;
 
-const display = document.getElementById("time-display");
+const dispH = document.getElementById("disp-h");
+const dispM = document.getElementById("disp-m");
+const dispS = document.getElementById("disp-s");
 const toggleButton = document.getElementById("toggle-button");
 const resetButton = document.getElementById("reset-button");
 const settingsButton = document.getElementById("settings-button");
@@ -50,17 +52,11 @@ function getElapsedMs() {
   return stopwatchState.elapsedMs + (Date.now() - stopwatchState.startedAt);
 }
 
-function formatTime(totalMs) {
-  const totalSeconds = Math.floor(totalMs / 1000);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  return `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-}
-
 function render() {
-  display.textContent = formatTime(getElapsedMs());
+  const totalSeconds = Math.floor(getElapsedMs() / 1000);
+  dispH.textContent = Math.floor(totalSeconds / 3600);
+  dispM.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+  dispS.textContent = String(totalSeconds % 60).padStart(2, "0");
   toggleButton.textContent = stopwatchState.isRunning ? "Pause" : "Start";
 }
 
