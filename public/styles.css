@@ -44,7 +44,7 @@ input {
   padding: 40px 32px;
   border: 1px solid var(--panel-border);
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 241, 0.98));
+  background: #faf9f7;
   box-shadow: var(--shadow);
 }
 
@@ -76,16 +76,15 @@ input {
 }
 
 .time-display {
-  margin-bottom: 28px;
-  padding: 24px 20px;
-  border: 1px solid rgba(36, 31, 24, 0.08);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.72);
+  margin-bottom: 36px;
+  padding: 20px 0;
   font-family: "Orbitron", monospace;
-  font-size: clamp(3rem, 12vw, 6.5rem);
+  font-size: clamp(2.5rem, 11vw, 5.5rem);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
   text-align: center;
+  white-space: nowrap;
 }
 
 .resume-form {
@@ -158,11 +157,6 @@ input {
   .panel {
     padding: 28px 20px;
     border-radius: 20px;
-  }
-
-  .time-display {
-    padding: 20px 12px;
-    letter-spacing: 0.02em;
   }
 
   .primary-button,
