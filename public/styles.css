@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "DSEG7Classic";
+  src: url("DSEG7Classic-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
 :root {
   --text: #241f18;
   --muted: #655a49;
@@ -74,7 +82,7 @@ input {
   align-items: baseline;
   margin-bottom: 36px;
   padding: 20px 0;
-  font-family: "Orbitron", monospace;
+  font-family: "DSEG7Classic", monospace;
   font-size: clamp(2.5rem, 11vw, 5.5rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
