@@ -4,6 +4,7 @@ const MAX_HOURS = 9999;
 const display = document.getElementById("time-display");
 const toggleButton = document.getElementById("toggle-button");
 const resetButton = document.getElementById("reset-button");
+const settingsButton = document.getElementById("settings-button");
 const resumeForm = document.getElementById("resume-form");
 const timeInput = document.getElementById("time-input");
 const errorMessage = document.getElementById("error-message");
@@ -55,7 +56,7 @@ function formatTime(totalMs) {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  return `${String(hours).padStart(4, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  return `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
 function render() {
@@ -131,6 +132,11 @@ function parseTimeInput(value) {
 
   return { elapsedMs: ((hours * 3600) + (minutes * 60) + seconds) * 1000 };
 }
+
+settingsButton.addEventListener("click", () => {
+  resumeForm.hidden = !resumeForm.hidden;
+  if (!resumeForm.hidden) timeInput.focus();
+});
 
 toggleButton.addEventListener("click", () => {
   if (stopwatchState.isRunning) {
