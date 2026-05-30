@@ -126,6 +126,8 @@ function resetStopwatch() {
   saveState();
   syncTicking();
   errorMessage.textContent = "";
+  resumeForm.hidden = true;
+  settingsButton.classList.remove("open");
   render();
 }
 
@@ -149,8 +151,10 @@ function parseTimeInput(value) {
 }
 
 settingsButton.addEventListener("click", () => {
-  resumeForm.hidden = !resumeForm.hidden;
-  if (!resumeForm.hidden) timeInput.focus();
+  const opening = resumeForm.hidden;
+  resumeForm.hidden = !opening;
+  settingsButton.classList.toggle("open", opening);
+  if (opening) timeInput.focus();
 });
 
 toggleButton.addEventListener("click", () => {
@@ -162,7 +166,25 @@ toggleButton.addEventListener("click", () => {
   startStopwatch();
 });
 
-resetButton.addEventListener("click", resetStopwatch);
+let resetTimer = null;
+resetButton.addEventListener("click", () => {
+  if (resetTimer) {
+    clearTimeout(resetTimer);
+    resetTimer = null;
+    resetButton.textContent = "Reset";
+    resetButton.classList.remove("confirming");
+    resetStopwatch();
+    return;
+  }
+
+  resetButton.textContent = "Confirm?";
+  resetButton.classList.add("confirming");
+  resetTimer = setTimeout(() => {
+    resetTimer = null;
+    resetButton.textContent = "Reset";
+    resetButton.classList.remove("confirming");
+  }, 3000);
+});
 
 resumeForm.addEventListener("submit", (event) => {
   event.preventDefault();

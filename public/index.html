@@ -11,13 +11,18 @@
   <body>
     <main class="app-shell">
       <section class="panel">
-        <button type="button" class="settings-button" id="settings-button" aria-label="Set time">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-          </svg>
-        </button>
         <div class="time-display" id="time-display" aria-live="polite"><span class="digit" id="d-h3"></span><span class="digit" id="d-h2"></span><span class="digit" id="d-h1"></span><span class="digit" id="d-h0">0</span><span class="sep">:</span><span class="digit" id="d-m1">0</span><span class="digit" id="d-m0">0</span><span class="sep">:</span><span class="digit" id="d-s1">0</span><span class="digit" id="d-s0">0</span></div>
+        <div class="button-row">
+          <button type="button" class="primary-button" id="toggle-button">Start</button>
+          <button type="button" class="secondary-button" id="reset-button">Reset</button>
+        </div>
+        <div class="dropdown-row">
+          <button type="button" class="dropdown-toggle" id="settings-button" aria-label="Set time">
+            <svg viewBox="0 0 20 12" width="20" height="12" aria-hidden="true">
+              <polygon points="10,12 0,0 20,0"/>
+            </svg>
+          </button>
+        </div>
         <form class="resume-form" id="resume-form" hidden>
           <label for="time-input">Continue from H:MM:SS</label>
           <div class="input-row">
@@ -32,10 +37,6 @@
           </div>
           <p class="error-message" id="error-message" role="alert"></p>
         </form>
-        <div class="button-row">
-          <button type="button" class="primary-button" id="toggle-button">Start</button>
-          <button type="button" class="secondary-button" id="reset-button">Reset</button>
-        </div>
       </section>
     </main>
     <script src="app.js"></script>

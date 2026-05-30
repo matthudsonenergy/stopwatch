@@ -33,32 +33,39 @@ input {
 }
 
 .panel {
-  position: relative;
   width: min(100%, 760px);
   padding: 40px 32px;
 }
 
-.settings-button {
-  position: absolute;
-  top: 0;
-  right: 0;
+.dropdown-row {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 8px;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.15s, background 0.15s;
+  margin-top: 16px;
 }
 
-.settings-button:hover {
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.dropdown-toggle:hover {
   color: var(--text);
-  background: rgba(0, 0, 0, 0.06);
+}
+
+.dropdown-toggle svg polygon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.dropdown-toggle.open svg polygon {
+  fill: currentColor;
+  stroke: currentColor;
 }
 
 .time-display {
@@ -145,6 +152,12 @@ input {
 
 .secondary-button:active {
   background: #dfd2bc;
+}
+
+.secondary-button.confirming {
+  background: #f5e0db;
+  border-color: #c9917a;
+  color: #8b3a2a;
 }
 
 .error-message {
