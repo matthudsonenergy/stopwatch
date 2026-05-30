@@ -39,6 +39,7 @@ input {
 }
 
 .panel {
+  position: relative;
   width: min(100%, 760px);
   padding: 40px 32px;
   border: 1px solid var(--panel-border);
@@ -47,18 +48,31 @@ input {
   box-shadow: var(--shadow);
 }
 
-.eyebrow {
-  margin: 0 0 8px;
+.settings-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 8px;
   color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
 }
 
-.title {
-  margin: 0 0 24px;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 600;
+.settings-button:hover {
+  color: var(--text);
+  background: var(--button-alt-bg);
+}
+
+.settings-button:active {
+  background: #dfd2bc;
 }
 
 .time-display {
@@ -67,10 +81,10 @@ input {
   border: 1px solid rgba(36, 31, 24, 0.08);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.72);
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(3.5rem, 14vw, 7rem);
+  font-family: "Orbitron", monospace;
+  font-size: clamp(3rem, 12vw, 6.5rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
 }
 
@@ -133,18 +147,10 @@ input {
   background: #dfd2bc;
 }
 
-.input-help,
 .error-message {
   margin: 10px 2px 0;
-  font-size: 0.95rem;
-}
-
-.input-help {
-  color: var(--muted);
-}
-
-.error-message {
   min-height: 1.2em;
+  font-size: 0.95rem;
   color: var(--error);
 }
 
