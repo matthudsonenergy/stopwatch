@@ -1,0 +1,12 @@
+{
+  "name": "stopwatch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple persistent stopwatch webapp for Railway.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <p class="eyebrow">Persistent Stopwatch</p>
+        <h1 class="title">Stopwatch</h1>
+        <div class="time-display" id="time-display" aria-live="polite">0000:00:00</div>
+        <form class="resume-form" id="resume-form">
+          <label for="time-input">Continue from HH:MM:SS</label>
+          <div class="input-row">
+            <input
+              id="time-input"
+              name="time-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="0012:34:56"
+              aria-describedby="input-help"
+            />
+            <button type="submit" class="secondary-button">Set Time</button>
+          </div>
+          <p class="input-help" id="input-help">
+            Hours can exceed 99. The stopwatch supports at least 2000 hours.
+          </p>
+          <p class="error-message" id="error-message" role="alert"></p>
+        </form>
+        <div class="button-row">
+          <button type="button" class="primary-button" id="toggle-button">Start</button>
+          <button type="button" class="secondary-button" id="reset-button">Reset</button>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
