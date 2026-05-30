@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--text);
-  background: linear-gradient(180deg, #efe5d4 0%, #f2ede3 55%, #e8ddca 100%);
+  background: #c0c0c0;
 }
 
 button,
