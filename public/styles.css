@@ -34,7 +34,7 @@ input {
 
 .panel {
   width: min(100%, 760px);
-  padding: 40px 16px;
+  padding: 40px 32px;
 }
 
 .dropdown-row {
@@ -75,7 +75,7 @@ input {
   margin-bottom: 36px;
   padding: 20px 0;
   font-family: "Orbitron", monospace;
-  font-size: clamp(2.5rem, 13vw, 6.2rem);
+  font-size: clamp(2.5rem, 11vw, 5.5rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0;
@@ -169,6 +169,6 @@ input {
 
 @media (max-width: 640px) {
   .panel {
-    padding: 28px 16px;
+    padding: 28px 20px;
   }
 }
