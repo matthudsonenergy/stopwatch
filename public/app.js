@@ -34,7 +34,11 @@ function buildState(elapsedMs = 0, isRunning = false, startedAt = null) {
 }
 
 function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(stopwatchState));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stopwatchState));
+  } catch {
+    // storage unavailable; state kept in memory only
+  }
 }
 
 function getElapsedMs() {

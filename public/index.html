@@ -9,8 +9,6 @@
   <body>
     <main class="app-shell">
       <section class="panel">
-        <p class="eyebrow">Persistent Stopwatch</p>
-        <h1 class="title">Stopwatch</h1>
         <div class="time-display" id="time-display" aria-live="polite">0000:00:00</div>
         <form class="resume-form" id="resume-form">
           <label for="time-input">Continue from HH:MM:SS</label>
@@ -22,13 +20,9 @@
               inputmode="numeric"
               autocomplete="off"
               placeholder="0012:34:56"
-              aria-describedby="input-help"
             />
             <button type="submit" class="secondary-button">Set Time</button>
           </div>
-          <p class="input-help" id="input-help">
-            Hours can exceed 99. The stopwatch supports at least 2000 hours.
-          </p>
           <p class="error-message" id="error-message" role="alert"></p>
         </form>
         <div class="button-row">
